@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import './SignUp.css'
 
 export default function Form(props) {
 
@@ -8,7 +9,7 @@ export default function Form(props) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [role, setRole] = useState('')
+    const [role, setRole] = useState('teacher')
     // States for checking the errors
     const [submitted, setSubmitted] = useState(false);
     const [error, setError] = useState(false);
@@ -31,6 +32,7 @@ export default function Form(props) {
         setSubmitted(false);
     };
     const handleRole = (e) => {
+        console.log(e.target.value)
         setRole(e.target.value);
         setSubmitted(false);
     };
@@ -100,19 +102,19 @@ export default function Form(props) {
                 {/* Labels and inputs for form data */}
                 <div>
 					<label className="label">Email</label>
-					<input onChange={handleEmail} className="input form-control"
+					<input onChange={handleEmail} placeholder="email" className="input form-control"
 						value={email} type="email" />
 
 				</div>
 				<div>
 					<label className="label">Password</label>
-					<input onChange={handlePassword} className="input form-control"
+					<input onChange={handlePassword} placeholder="password" className="input form-control"
 						value={password} type="password" />
 
 				</div>
 				<div>
 				<label className="label">Role</label>
-					<select className='form-select' onChange={handleRole}>
+					<select className='form-select' defaultValue={'teacher'} onChange={handleRole}>
 						<option value="teacher">Teacher</option>
 						<option value="student">Student</option>
 						<option value="parent">Parent</option>

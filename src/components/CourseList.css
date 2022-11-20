@@ -1,0 +1,21 @@
+.course-list{
+    display: grid;
+    width: 100%;
+    padding: 50px 150px;
+    grid-template-columns: repeat(3, 1fr);
+    gap:60px;
+}
+
+.course-item{
+    border: 1px solid black;
+    color: black;
+    width : 100%;
+    background-color: #C7F2A4;
+}
+
+.course-item:hover{
+    border: 1px solid white;
+    width : 100%;
+    cursor: pointer;
+    background-color: #E1FFB1;
+}

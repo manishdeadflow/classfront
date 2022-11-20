@@ -1,11 +1,13 @@
+import React, { useState } from 'react';
 import SignUp from './SignUp';
 import Login from './Login';
-import './SignUp.css'
-import React, { useState } from 'react';
+import Teacher from './Teacher'
+import Student from './Student'
+import Parent from './Parent'
 
 function View() {
     const [token, setToken] = useState('')
-    const [page, setPage] = useState('signup')
+    const [page, setPage] = useState('login')
     const [role, setRole] = useState('')
 
     const setValues = function (token,role,page){
@@ -30,26 +32,17 @@ function View() {
     }
     if(role==='teacher'){
         return (
-            <div>
-                <p>{token}</p>
-                <p>{role}</p>
-            </div>
+            <Teacher token={token}/>
         );
     }
     if(role==='parent'){
         return (
-            <div>
-                <p>{token}</p>
-                <p>{role}</p>
-            </div>
+            <Parent token={token}/>
         );
     }
     if(role==='student'){
         return (
-            <div >
-                <p>{token}</p>
-                <p>{role}</p>
-            </div>
+            <Student token={token}/>
         );
     }
 }

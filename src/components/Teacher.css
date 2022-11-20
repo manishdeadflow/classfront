@@ -1,0 +1,23 @@
+
+.class-modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+.class-modal-form{
+    width :20%;
+    padding: 30px;
+    border: 1px solid black;
+    margin:100px auto;
+    background-color: #E1FFB1;
+    border-radius: 5%;
+}
+
+
+.hidden{
+    display: none;
+}
