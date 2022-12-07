@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import CourseListStudent from './CourseListStudent'
+import CourseListStudent from '../CourseListStudent'
+import Navbar from '../Navbar';
 // import 'bootstrap/dist/css/bootstrap.min.css'
-import './Student.css'
+import '../Student.css'
 
 const Student = function (props) {
 
@@ -12,16 +13,13 @@ const Student = function (props) {
     const [description, setDescription] = useState('');
     const modalRef = useRef()
 
-    // axios.defaults.headers.common['Authorization'] = `Bearer ${props.token}`;
-    const config = {
-        headers: {
-            Authorization: props.token
-        }
-    };
+axios.defaults.headers.common[
+    "Authorization"
+  ] = `Bearer ${localStorage.getItem("Authorization")}`;
 
     const getCourses = async function () {
         try {
-            const course = await axios.get('http://localhost:3001/student/courses', config)
+            const course = await axios.get('http://localhost:3001/student/courses')
             console.log(course.data)
             setCourses(course.data)
         } catch (e) {
@@ -35,7 +33,7 @@ const Student = function (props) {
 
     const classIdSubmitHandler = async () => {
         modalRef.current.classList.add('hidden')
-        const newCourse= await axios.post('http://localhost:3001/student/joinClass',{id:id},config)
+        const newCourse= await axios.post('http://localhost:3001/student/joinClass',{id:id})
         setId('')
         getCourses();
     }
@@ -51,8 +49,9 @@ const Student = function (props) {
     if (page) {
         return (
             <div>
+            <Navbar />
                 <CourseListStudent courses={courses} />
-                <button className='btn btn-outline-dark' onClick={addClassHandler}>Add Course</button>
+                <button className='btn btn-outline-dark' onClick={addClassHandler}>Join Class</button>
                 <div className='class-modal hidden' ref={modalRef}>
                     <div className='class-modal-form'>
                         <div >

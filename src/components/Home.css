@@ -1,0 +1,24 @@
+
+.home{
+  background-image: url(../images/background.jpg);
+  height: 100vh;
+}
+
+.home-nav{
+  display: flex;
+  padding: 30px 80px;
+  justify-content:space-between;
+}
+
+.home-logo{
+  width: 100px;  
+}
+
+.home-btn-div{
+  display: flex;
+  width :10%;
+  justify-content: space-evenly;
+}
+
+
+

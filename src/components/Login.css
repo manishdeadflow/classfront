@@ -1,0 +1,40 @@
+
+.login-container{
+  display: flex;
+}
+
+.left-img{
+  max-height: 100vh;
+}
+
+.login-form{
+  margin: auto;
+  width:25% ;
+  border: 1px solid gray;
+  border-radius: 10%;
+  padding: 30px 60px;
+  background-color: #DEF5E5;
+}
+
+.label{
+  margin: 20px 0px 0px;
+}
+
+.input{
+  margin-bottom: 20px ;
+}
+
+.form-select{
+  margin-bottom: 40px;
+}
+
+.login-link{
+  display:block;
+  padding: 20px;
+  color: black;
+  text-decoration: none;
+}
+
+.btn{
+
+}
