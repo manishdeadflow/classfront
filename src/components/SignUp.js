@@ -44,7 +44,7 @@ export default function Form(props) {
       setError(true);
     } else {
       try {
-        const data = { email: email, password: password, role: role };
+        const data = { name:name,email: email, password: password, role: role };
         const user = await axios.post("http://localhost:3001/createUser", data);
         localStorage.setItem('Authorization', user.data.token);
         setName('');
