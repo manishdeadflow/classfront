@@ -7,7 +7,7 @@ import SignUp from "./components/SignUp";
 import Parent from "./components/parent/Parent"
 import Student from "./components/student/Student"
 import Teacher from "./components/teacher/Teacher"
-import CourseT from "./components/parent/Course"
+import CourseT from "./components/teacher/Course"
 
 function App() {
   return (
