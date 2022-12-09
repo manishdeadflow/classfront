@@ -16,13 +16,13 @@ const Course = function () {
       setNotes(data.data.course.notes);
       setAssigments(data.data.assigments);
       setStudents(data.data.students);
-    } catch (e) {}
+    } catch (e) { }
   };
 
   useEffect(() => {
     setValues();
   }, []);
-  
+
   return (
     <div>
       <Navbar />
@@ -30,19 +30,19 @@ const Course = function () {
         <div className="student-box">
           <div className="put-adjacent">
             <h2>Students</h2>
-            <button className="btn btn-outline-dark">Share</button>
+            <button className="btn btn-primary"> &gt; </button>
           </div>
-          <div className="student-list">
+          <div className="student-list list-group">
             {students.length !== 0 &&
               students.map((value) => (
-                <div id={value.student._id}>{value.student.name}</div>
+                <div className="student-list-item list-group-item" id={value.student._id}>{value.student.name}</div>
               ))}
           </div>
         </div>
         <div className="notes-box">
           <div className="put-adjacent">
             <h2>Notes</h2>
-            <button className="btn btn-outline-dark">Add Note</button>
+            <button className="btn btn-outline-dark"> + </button>
           </div>
           <div className="notes-list">
             {notes.length !== 0 &&
@@ -54,7 +54,7 @@ const Course = function () {
         <div className="assigment-box">
           <div className="put-adjacent">
             <h2>Assigments</h2>
-            <button className="btn btn-outline-dark">Add Assigment</button>
+            <button className="btn btn-outline-dark"> + </button>
           </div>
           <div className="assigment-list">
             {assigments.length !== 0 &&
