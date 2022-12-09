@@ -157,7 +157,7 @@ export default function Form(props) {
         </Link>
       </div>
       <div>
-        <img className="left-img" src={right} />
+        <img className="left-img" alt="logo" src={right} />
       </div>
     </div>
   );

@@ -8,6 +8,8 @@ import Parent from "./components/parent/Parent"
 import Student from "./components/student/Student"
 import Teacher from "./components/teacher/Teacher"
 import CourseT from "./components/teacher/Course"
+import CourseS from "./components/student/Course"
+import StudentP from "./components/parent/Student"
 
 function App() {
   return (
@@ -17,9 +19,11 @@ function App() {
       <Route path="/login" element={<Login />}/>
       <Route path="/signup" element={<SignUp />}/>
       <Route path="/parent" element={<Parent />}/>
+      <Route path="/parent/student" element={<StudentP />}/>
       <Route path="/teacher" element={<Teacher />}/>
       <Route path="/teacher/course" element={<CourseT />} />
       <Route path="/student" element={<Student />}/>
+      <Route path="/student/course" element={<CourseS />} />
     </Routes>
     </div>
   );

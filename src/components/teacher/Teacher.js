@@ -6,7 +6,6 @@ import Navbar from "../Navbar"
 import "../Teacher.css";
 
 const Teacher = function (props) {
-  const [page, setPage] = useState(true);
   const [courses, setCourses] = useState([]);
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -31,7 +30,7 @@ const Teacher = function (props) {
 
   const classSubmitHandler = async () => {
     modalRef.current.classList.add("hidden");
-    const newCourse = await axios.post(
+    await axios.post(
       "http://localhost:3001/teacher/createCourse",
       { name: name, description: description }
     );
@@ -53,7 +52,6 @@ const Teacher = function (props) {
     getCourses();
   }, []);
 
-  if (page) {
     return (
       <div>
         <Navbar />
@@ -95,7 +93,6 @@ const Teacher = function (props) {
         </div>
       </div>
     );
-  }
 };
 
 export default Teacher;

@@ -11,10 +11,14 @@ const Navbar = function () {
     localStorage.removeItem('Authorization')
     navigate('/login')
   }
+  
+  const logoHandler = () => {
+    navigate('/')
+  }
 
   return(
     <div className="navbar">
-    <img className="navbar-logo" src={logo} />
+    <img onClick={logoHandler} className="navbar-logo" alt="logo" src={logo} />
     <div>
       <button onClick={logoutHandler} className="btn btn-light ">Log Out</button>
     </div>

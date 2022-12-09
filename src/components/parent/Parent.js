@@ -5,11 +5,9 @@ import Navbar from "../Navbar";
 // import 'bootstrap/dist/css/bootstrap.min.css'
 import "../Student.css";
 
-const Student = function (props) {
-  const [page, setPage] = useState(true);
+const Parent = function (props) {
   const [students, setStudents] = useState([]);
   const [email, setEmail] = useState("");
-  const [description, setDescription] = useState("");
   const modalRef = useRef();
 
   axios.defaults.headers.common[
@@ -31,10 +29,9 @@ const Student = function (props) {
 
   const classIdSubmitHandler = async () => {
     modalRef.current.classList.add("hidden");
-    const newCourse = await axios.patch(
-      "http://localhost:3001/parent/addStudent",
-      { email: email }
-    );
+    await axios.patch("http://localhost:3001/parent/addStudent", {
+      email: email,
+    });
     setEmail("");
     getStudents();
   };
@@ -47,39 +44,37 @@ const Student = function (props) {
     getStudents();
   }, []);
 
-  if (page) {
-    return (
-      <div>
-        <Navbar />
-        <StudentList students={students} />
-        <button className="btn btn-outline-dark" onClick={addClassHandler}>
-          Add Student
-        </button>
-        <div className="class-modal hidden" ref={modalRef}>
-          <div className="class-modal-form">
-            <div>
-              <label className="label">Email</label>
-              <input
-                onChange={emailHandler}
-                placeholder="Email"
-                className="input form-control"
-                value={email}
-                type="email"
-              />
-            </div>
-            <div>
-              <button
-                onClick={classIdSubmitHandler}
-                className="btn btn-outline-dark"
-              >
-                Submit
-              </button>
-            </div>
+  return (
+    <div>
+      <Navbar />
+      <StudentList students={students} />
+      <button className="btn btn-outline-dark" onClick={addClassHandler}>
+        Add Student
+      </button>
+      <div className="class-modal hidden" ref={modalRef}>
+        <div className="class-modal-form">
+          <div>
+            <label className="label">Email</label>
+            <input
+              onChange={emailHandler}
+              placeholder="Email"
+              className="input form-control"
+              value={email}
+              type="email"
+            />
+          </div>
+          <div>
+            <button
+              onClick={classIdSubmitHandler}
+              className="btn btn-outline-dark"
+            >
+              Submit
+            </button>
           </div>
         </div>
       </div>
-    );
-  }
+    </div>
+  );
 };
 
-export default Student;
+export default Parent;

@@ -8,7 +8,7 @@ const CourseList = function (props) {
 
   const clickHandler = function (id) {
     localStorage.setItem('course-t', id)
-    navigate('course')
+    navigate('report')
   }
 
 
