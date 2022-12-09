@@ -1,24 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800;900&family=Ubuntu:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@600;700;800;900&display=swap');
 
-.home{
+.home {
   background-image: url(../images/background.jpg);
   height: 100vh;
+  font-family: 'Raleway', sans-serif;
 }
 
-.home-nav{
+.home-nav {
   display: flex;
   padding: 30px 80px;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
-.home-logo{
-  width: 100px;  
+.home-logo {
+  width: 100px;
 }
 
-.home-btn-div{
+.home-btn-div {
   display: flex;
-  width :10%;
+  width: 20%;
   justify-content: space-evenly;
 }
 
+.home-welcome {
+  height: 75vh;
+  text-align: left;
+  padding: 9rem 0 0 12rem;
 
+  color: rgb(243, 243, 243);
+  font-weight: 700;
+  font-size: 4rem;
+  word-spacing: 1rem;
+}
 
+.btn {
+  min-width: 100px;
+}

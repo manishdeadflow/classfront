@@ -1,21 +1,41 @@
-.course-list{
+.course-list {
     display: grid;
     width: 100%;
     padding: 50px 150px;
     grid-template-columns: repeat(3, 1fr);
-    gap:60px;
+    gap: 60px;
 }
 
-.course-item{
-    border: 1px solid black;
-    color: black;
-    width : 100%;
-    background-color: #C7F2A4;
+.course-item {
+    border: 2px solid #9dd598;
+    border-radius: 10px;
+    color: #225d1d;
+    width: 100%;
+    min-height: 10rem;
+    background-color: #ceedcb;
 }
 
-.course-item:hover{
-    border: 1px solid white;
-    width : 100%;
+.course-item h1 {
+    text-transform: capitalize;
+    padding: 1.75rem 0;
+}
+
+.course-item p {
+    background-color: whitesmoke;
+    border-radius: 5px;
+    text-transform: capitalize;
+    padding: 1.25rem 0;
+    margin: 0.5px;
+}
+
+.course-item:hover {
+    border: 2px solid #527a4f;
+    width: 100%;
     cursor: pointer;
-    background-color: #E1FFB1;
+    color: #ceedcb;
+    background-color: #527a4f;
+}
+
+.course-item:hover p {
+    color: #225d1d;
 }
