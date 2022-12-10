@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Link , useNavigate} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import left from "../images/left.jpg";
 
@@ -63,7 +63,7 @@ export default function Form(props) {
           display: submitted ? "" : "none",
         }}
       >
-        <h3>User successfully registered!!</h3>
+        <p>User successfully registered!!</p>
       </div>
     );
   };
@@ -77,7 +77,7 @@ export default function Form(props) {
           display: error ? "" : "none",
         }}
       >
-        <h3>Please enter all the fields</h3>
+        <p>* Please enter all the fields *</p>
       </div>
     );
   };
@@ -85,7 +85,7 @@ export default function Form(props) {
   return (
     <div className="login-container">
       <div>
-        <img className="left-img" src={left} />
+        <img className="left-img" src={left} alt="bookshelf image" />
       </div>
       <div className="login-form">
         <div>

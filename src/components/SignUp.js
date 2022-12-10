@@ -14,7 +14,7 @@ export default function Form(props) {
   // States for checking the errors
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(false);
-  
+
   const navigate = useNavigate();
 
   const handleName = (e) => {
@@ -44,7 +44,7 @@ export default function Form(props) {
       setError(true);
     } else {
       try {
-        const data = { name:name,email: email, password: password, role: role };
+        const data = { name: name, email: email, password: password, role: role };
         const user = await axios.post("http://localhost:3001/createUser", data);
         localStorage.setItem('Authorization', user.data.token);
         setName('');
@@ -157,7 +157,7 @@ export default function Form(props) {
         </Link>
       </div>
       <div>
-        <img className="left-img" alt="logo" src={right} />
+        <img className="left-img" alt="bookshelf image" src={right} />
       </div>
     </div>
   );

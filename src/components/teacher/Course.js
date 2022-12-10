@@ -23,7 +23,7 @@ const Course = function () {
       setNotes(data.data.course.notes);
       setAssigments(data.data.assigments);
       setStudents(data.data.students);
-    } catch (e) {}
+    } catch (e) { }
   };
 
   useEffect(() => {
@@ -110,7 +110,7 @@ const Course = function () {
           <div className="notes-list">
             {notes.length !== 0 &&
               notes.map((value) => (
-                <div id={value.notes._id}>{value.notes.name}</div>
+                <div className="notes-list-item" id={value.notes._id}>{value.notes.name}</div>
               ))}
           </div>
         </div>
@@ -121,7 +121,7 @@ const Course = function () {
           </div>
           <div className="assigment-list">
             {assigments.length !== 0 &&
-              assigments.map((value) => <div id={value._id}>{value.name}</div>)}
+              assigments.map((value) => <div className="assign-list-item" id={value._id}>{value.name}</div>)}
           </div>
         </div>
       </div>
