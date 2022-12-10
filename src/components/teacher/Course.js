@@ -92,7 +92,7 @@ const Course = function () {
               students.map((value) => (
                 <div
                   className="student-list-item list-group-item"
-                  id={value.student._id}
+                  key={value.student._id}
                 >
                   {value.student.name}
                 </div>
@@ -110,7 +110,7 @@ const Course = function () {
           <div className="notes-list">
             {notes.length !== 0 &&
               notes.map((value) => (
-                <div className="notes-list-item" id={value.notes._id}>{value.notes.name}</div>
+                <div className="notes-list-item" key={value.notes._id}>{value.notes.name}</div>
               ))}
           </div>
         </div>
@@ -121,7 +121,7 @@ const Course = function () {
           </div>
           <div className="assigment-list">
             {assigments.length !== 0 &&
-              assigments.map((value) => <div className="assign-list-item" id={value._id}>{value.name}</div>)}
+              assigments.map((value) => <div className="assign-list-item" key={value._id}>{value.name}</div>)}
           </div>
         </div>
       </div>

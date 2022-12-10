@@ -10,6 +10,7 @@ import Teacher from "./components/teacher/Teacher"
 import CourseT from "./components/teacher/Course"
 import CourseS from "./components/student/Course"
 import StudentP from "./components/parent/Student"
+import Report from "./components/parent/Report"
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
       <Route path="/signup" element={<SignUp />}/>
       <Route path="/parent" element={<Parent />}/>
       <Route path="/parent/student" element={<StudentP />}/>
+      <Route path="/parent/student/report" element={<Report />}/>
       <Route path="/teacher" element={<Teacher />}/>
       <Route path="/teacher/course" element={<CourseT />} />
       <Route path="/student" element={<Student />}/>
